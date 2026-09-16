@@ -37,7 +37,7 @@ while True:
             continue
         elif validasi == "y" and jawaban_user == capibara_room:
             print(f'''
-            Kamu CANTIK!
+            Kamu CANTIK BAN!
             Capibara Tidur pada goa nomor {capibara_room}
             {tmp_goa}''')
             pass
