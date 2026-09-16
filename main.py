@@ -37,7 +37,7 @@ while True:
             continue
         elif validasi == "y" and jawaban_user == capibara_room:
             print(f'''
-            Kamu Benar!
+            Kamu CANTIK!
             Capibara Tidur pada goa nomor {capibara_room}
             {tmp_goa}''')
             pass
@@ -50,9 +50,6 @@ while True:
             else:
                 continue
                             
-            # play_again = input("\n\n Apakah Kamu Ingin Bermain Kembali ? [y/n]: ")
-            # if play_again == "n":
-            #     break 
                 
     play_again = input("\n\n Apakah Kamu Ingin Bermain Kembali ? [y/n]: ")
     if play_again == "n":
