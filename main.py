@@ -1,65 +1,23 @@
-import random
-from library import welcome_message
+from library import welcome_message, exit_program
+from games import capibara
+from tools import warung
 
-# Variabel
-nama_game = "CAPIBARA ROOM"
-nama_user = input("Masukkan Nama Kamu: ")
-
-
-welcome_message("GOA CAPIBARA GAME")
-print(f"Selamat Bermain {nama_user}")
-
-# Variabel Bentuk Goa Capibara
-def random_goa():
-    return  random.randint(1, 4)
-
-capibara_room = random_goa()
-bentuk_goa = "|_|"
-goa = [bentuk_goa] * 4
-
-tmp_goa = goa.copy()
-tmp_goa[capibara_room - 1] = "|0_0|"
-
-goa = ' '.join(goa)
-tmp_goa = ' '.join(tmp_goa)
-
-
-while True:
-    print(f''' 
-    Hari ini di luar hujan sangat lebat, di Goa mana kah Capibara tidur?
-    {goa}
-    ''')
-
-    jawaban_user = int(input("Capibara tidur di Goa Nomor [1/ 2/ 3/ 4]: "))
-    if jawaban_user is not None:
-        validasi = input("Apakah kamu yakin dengan jawaban kamu? [y/n]: " )
-        if validasi == "n":
-            continue
-        elif validasi == "y" and jawaban_user == capibara_room:
-            print(f'''
-            Kamu CANTIK BAN!
-            Capibara Tidur pada goa nomor {capibara_room}
-            {tmp_goa}''')
-            pass
+def options():
+    while True:
+        options_menu = int(input('\n\nProgram Menu : \n1. Game Tebak Goa Capibara \n2. Aplikasi WARUNG \n3. Keluar Program \nSilahkan pilih program menu : '))
+        if options_menu == 1:
+            capibara.start()
+        elif options_menu == 2:
+            warung.start()
+        elif options_menu == 3:
+            exit_program()
+            break
         else:
-            print("Yahhh Kamu Salah!")
-            coba_lagi = input("\n\n Apakah Kamu Ingin mencoba Menebaknya Lagi ? [y/n]: ")
-            
-            if coba_lagi == "n":
-                pass
-            else:
-                continue
-                            
-                
-    play_again = input("\n\n Apakah Kamu Ingin Bermain Kembali ? [y/n]: ")
-    if play_again == "n":
-       break 
-    else:
-        capibara_room = random_goa()
-        
+            print("Hanya bisa memilih menu yang tersedia!")
 
-print(f"\n\n Game selesai, Capibara Lanjut bobo yaa {nama_user}")
+def main():
+    welcome_message()
+    options()
 
-
-
-
+if __name__ == '__main__':
+    main()
